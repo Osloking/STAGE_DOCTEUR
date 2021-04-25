@@ -25,14 +25,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List _items = [];
+  List _doctors = [];
 
   // Fetch content from the json file
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/simple.json');
+    final String response = await rootBundle.loadString('assets/doctor.json');
     final data = await json.decode(response);
     setState(() {
-      _items = data["items"];
+      _doctors = data["doctors"];
     });
   }
 
@@ -46,23 +46,47 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
   child: ListView(
-    // Important: Remove any padding from the ListView.
+ 
     padding: EdgeInsets.zero,
     children: <Widget>[
       DrawerHeader(
-        child: Text('Drawer Header'),
+        child: Text("Dr Khalid Taouil "),
         decoration: BoxDecoration(
           color: Colors.blue,
         ),
       ),
       ListTile(
-        title: Text('Item 1'),
+        title: Text('Accueil'),
         onTap: () {
           
         },
       ),
       ListTile(
-        title: Text('Item 2'),
+        title: Text('Mes Patients'),
+        onTap: () {
+        
+        },
+      ),
+        ListTile(
+        title: Text('Messagerie'),
+        onTap: () {
+        
+        },
+      ),
+         ListTile(
+        title: Text('Ordonnances'),
+        onTap: () {
+        
+        },
+      ),
+            ListTile(
+        title: Text('Docements'),
+        onTap: () {
+        
+        },
+      ),
+                 ListTile(
+        title: Text('Téléconsultation'),
         onTap: () {
         
         },
@@ -72,36 +96,6 @@ class _HomePageState extends State<HomePage> {
 ),
 
 
-      body: Padding(
-        padding: const EdgeInsets.all(25),
-        child: Column(
-          children: [
-            ElevatedButton(
-              child: Text('Load Data'),
-              onPressed: readJson,
-            ),
-
-            // Display the data loaded from sample.json
-            _items.length > 0
-                ? Expanded(
-                    child: ListView.builder(
-                      itemCount: _items.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          margin: EdgeInsets.all(10),
-                          child: ListTile(
-                            leading: Text(_items[index]["id"]),
-                            title: Text(_items[index]["name"]),
-                            subtitle: Text(_items[index]["description"]),
-                          ),
-                        );
-                      },
-                    ),
-                  )
-                : Container()
-          ],
-        ),
-      ),
     );
   }
 }
