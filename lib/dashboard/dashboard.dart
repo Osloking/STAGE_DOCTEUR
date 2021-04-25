@@ -2,30 +2,15 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import'./dashboard/dashboard.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+
+class DashBoard extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Hide the debug banner
-      debugShowCheckedModeBanner: false,
-      title: 'Kindacode.com',
-      home: DashBoard(),
-    );
-  }
+  _DashBoardState createState() => _DashBoardState();
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class _DashBoardState extends State<DashBoard> {
   List _doctors = [];
 
   // Fetch content from the json file
