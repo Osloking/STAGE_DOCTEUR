@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import'./dashboard/dashboard.dart';
 import'json_read.dart';
+import '../dashboard/accueil.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
       title: 'Kindacode.com',
-      home: DashBoard(),
+      home: Accueil(),
     );
   }
 }
