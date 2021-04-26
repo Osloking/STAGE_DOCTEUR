@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import'./dashboard/dashboard.dart';
 import'json_read.dart';
 import '../dashboard/accueil.dart';
+import'load_json.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

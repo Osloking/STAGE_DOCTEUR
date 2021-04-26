@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: readJson,
             ),
 
-            // Display the data loaded from sample.json
+           
             _items.length > 0
                 ? Expanded(
                     child: ListView.builder(

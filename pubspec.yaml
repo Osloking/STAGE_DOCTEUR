@@ -52,6 +52,7 @@ flutter:
     - assets/
     - assets/json_files/simple.json
     - assets/json_files/doctor.json
+    - assets/json_files/person.json
     - assets/images/logo/logo.png
     - assets/images/logo/logoB.png
     - assets/images/logo/logoD.png
