@@ -128,7 +128,7 @@ class Accueil extends StatelessWidget {
  Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            leading: Icon(Icons.person),
+                            leading: Icon(Icons.person,color:Color(0xff6874ec)),
                             title: Text("Total Patients:",style: TextStyle(color: Colors.black),),
                             subtitle: Text("16"),
                             
@@ -137,7 +137,7 @@ class Accueil extends StatelessWidget {
   Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            leading: Icon(Icons.person),
+                            leading: Icon(Icons.people,color:Colors.green),
                             title: Text("Patients Activés:",style: TextStyle(color: Colors.black),),
                             subtitle: Text("16"),
                             
@@ -149,9 +149,7 @@ class Accueil extends StatelessWidget {
  Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            leading: CircleAvatar(
-  backgroundImage: AssetImage("assets/images/logo/logo.png"), 
-),
+                            leading: Icon(Icons.insert_drive_file,color:Colors.blue),
                             title: Text("Prescriptions:",style: TextStyle(color: Colors.black),),
                             subtitle: Text("16"),
                             
