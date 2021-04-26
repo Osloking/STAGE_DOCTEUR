@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-
+import '../dashboard/accueil.dart';
 
 
 class DashBoard extends StatefulWidget {
@@ -43,6 +43,10 @@ class _DashBoardState extends State<DashBoard> {
 
         title: Text('Accueil'),
         onTap: () {
+          Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Accueil()),
+                  );
           
         },
       ),
