@@ -15,7 +15,7 @@ class _DashBoardState extends State<DashBoard> {
 
   // Fetch content from the json file
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/doctor.json');
+    final String response = await rootBundle.loadString('assets/json_files/doctor.json');
     final data = await json.decode(response);
     setState(() {
       _doctors = data["doctors"];
@@ -35,12 +35,9 @@ class _DashBoardState extends State<DashBoard> {
  
     padding: EdgeInsets.zero,
     children: <Widget>[
-      DrawerHeader(
-        child: Text("Dr Khalid Taouil "),
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
-      ),
+
+    _createDrawerHeader(),
+
       ListTile(
         leading: Icon(Icons.home),
 
@@ -99,4 +96,31 @@ class _DashBoardState extends State<DashBoard> {
 
     );
   }
+}
+
+
+Widget _createDrawerHeader() {
+  return DrawerHeader(
+      margin: EdgeInsets.zero,
+      padding: EdgeInsets.zero,
+      child: Stack(children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(20),
+          child: Center(
+            child: Image.asset(
+              'assets/images/logo/logo.png',
+              width: 220,
+              height: 220,
+            ),
+          ),
+        ),
+        Positioned(
+            bottom: 12.0,
+            left: 16.0,
+            child: Text("Developed  by OrdoXpress",
+                style: TextStyle(
+                    color: Color(0xFF545454),
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w500))),
+      ]));
 }

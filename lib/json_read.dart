@@ -3,21 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Hide the debug banner
-      debugShowCheckedModeBanner: false,
-      title: 'Kindacode.com',
-      home: HomePage(),
-    );
-  }
-}
 
 class HomePage extends StatefulWidget {
   @override
@@ -29,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   // Fetch content from the json file
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/simple.json');
+    final String response = await rootBundle.loadString('assets/json_files/simple.json');
     final data = await json.decode(response);
     setState(() {
       _items = data["items"];
