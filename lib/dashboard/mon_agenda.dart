@@ -3,6 +3,7 @@ import 'dart:convert';
 import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 import'../dashboard/accueil.dart';
+import'../dashboard/mes_patients.dart';
 class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -71,13 +72,20 @@ class Agenda extends StatelessWidget {
         title: Text('Mon Agenda'),
         onTap: () {
           
+           Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Agenda()),
+                  );
         },
       ),
       ListTile(
          leading: Icon(Icons.people,color:Color(0xff6874ec)),
         title: Text('Mes Patients'),
         onTap: () {
-        
+        Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Patient()),
+                  );
         },
       ),
         ListTile(
