@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-
+import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 
 class Accueil extends StatelessWidget {
@@ -9,10 +9,16 @@ class Accueil extends StatelessWidget {
     return Scaffold(
     
       appBar: AppBar(
-      
+
         backgroundColor: Color(0xff6874ec),
         
         actions: <Widget>[
+
+/* IconButton(icon: Icon(Icons.search),
+              onPressed: () {
+                
+              }),*/
+ SizedBox(width:100),
         IconButton(
               icon: Icon(
                 Icons.chat,
@@ -35,6 +41,7 @@ class Accueil extends StatelessWidget {
                 color: Color(0xffffffff),
               ),
               onPressed: () => {}),
+         
             
         ],
       ),
@@ -105,7 +112,55 @@ class Accueil extends StatelessWidget {
   ),
 ),
 
-     /* body: HomeBody(),*/
+      body: ListView(
+      children: <Widget>[
+        SearchWidget(),
+        Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Text("Bonjour"),
+                            title: Text("Dr Khalid",style: TextStyle(color: Colors.black),),
+                            
+                          ),
+                        ),
+
+
+ Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Icon(Icons.person),
+                            title: Text("Total Patients:",style: TextStyle(color: Colors.black),),
+                            subtitle: Text("16"),
+                            
+                          ),
+                        ),
+  Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Icon(Icons.person),
+                            title: Text("Patients Activés:",style: TextStyle(color: Colors.black),),
+                            subtitle: Text("16"),
+                            
+                          ),
+                        ),
+
+
+
+ Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: CircleAvatar(
+  backgroundImage: AssetImage("assets/images/logo/logo.png"), 
+),
+                            title: Text("Prescriptions:",style: TextStyle(color: Colors.black),),
+                            subtitle: Text("16"),
+                            
+                          ),
+                        ),
+
+
+      ],
+    ),
 
     );
   }
