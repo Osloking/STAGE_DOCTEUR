@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
-
+import'../dashboard/mon_agenda.dart';
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Accueil extends StatelessWidget {
  SizedBox(width:100),
         IconButton(
               icon: Icon(
-                Icons.chat,
+                Icons.mail,
                 size: 30,
                 color: Color(0xffffffff),
               ),
@@ -54,7 +54,7 @@ class Accueil extends StatelessWidget {
     _createDrawerHeader(),
 
       ListTile(
-        leading: Icon(Icons.home),
+        leading: Icon(Icons.home,color:Color(0xff6874ec)),
 
         title: Text('Accueil'),
         onTap: () {
@@ -66,43 +66,47 @@ class Accueil extends StatelessWidget {
         },
       ),
       ListTile(
-        leading: Icon(Icons.view_agenda),
+        leading: Icon(Icons.view_agenda,color:Color(0xff6874ec)),
 
         title: Text('Mon Agenda'),
         onTap: () {
+            Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Agenda()),
+                  );
           
         },
       ),
       ListTile(
-         leading: Icon(Icons.people),
+         leading: Icon(Icons.people,color:Color(0xff6874ec)),
         title: Text('Mes Patients'),
         onTap: () {
         
         },
       ),
         ListTile(
-          leading: Icon(Icons.chat),
+          leading: Icon(Icons.chat,color:Color(0xff6874ec)),
         title: Text('Messagerie'),
         onTap: () {
         
         },
       ),
          ListTile(
-          leading: Icon(Icons.insert_drive_file),
+          leading: Icon(Icons.insert_drive_file,color:Color(0xff6874ec)),
         title: Text('Ordonnances'),
         onTap: () {
         
         },
       ),
             ListTile(
-                leading: Icon(Icons.folder),
+                leading: Icon(Icons.folder,color:Color(0xff6874ec)),
         title: Text('Docements'),
         onTap: () {
         
         },
       ),
                  ListTile(
-                    leading: Icon(Icons.videocam),
+                    leading: Icon(Icons.videocam,color:Color(0xff6874ec)),
         title: Text('Téléconsultation'),
         onTap: () {
         
@@ -118,8 +122,8 @@ class Accueil extends StatelessWidget {
         Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            leading: Text("Bonjour"),
-                            title: Text("Dr Khalid",style: TextStyle(color: Colors.black),),
+                            leading: Text("Bonjour ,",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
+                            title: Text("Dr Khalid",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),
@@ -130,7 +134,7 @@ class Accueil extends StatelessWidget {
                           child: ListTile(
                             leading: Icon(Icons.person,color:Color(0xff6874ec)),
                             title: Text("Total Patients:",style: TextStyle(color: Colors.black),),
-                            subtitle: Text("16"),
+                            subtitle: Text("16",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),
@@ -139,7 +143,7 @@ class Accueil extends StatelessWidget {
                           child: ListTile(
                             leading: Icon(Icons.people,color:Colors.green),
                             title: Text("Patients Activés:",style: TextStyle(color: Colors.black),),
-                            subtitle: Text("16"),
+                            subtitle: Text("16",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),
@@ -151,7 +155,7 @@ class Accueil extends StatelessWidget {
                           child: ListTile(
                             leading: Icon(Icons.insert_drive_file,color:Colors.blue),
                             title: Text("Prescriptions:",style: TextStyle(color: Colors.black),),
-                            subtitle: Text("16"),
+                            subtitle: Text("16",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),
@@ -173,7 +177,7 @@ Widget _createDrawerHeader() {
           padding: EdgeInsets.all(20),
           child: Center(
             child: Image.asset(
-              'assets/images/logo/logo.png',
+              'assets/images/logo/logoD.png',
               width: 220,
               height: 220,
             ),
@@ -184,7 +188,7 @@ Widget _createDrawerHeader() {
             left: 16.0,
             child: Text("Developed  by OrdoXpress",
                 style: TextStyle(
-                    color: Color(0xFF545454),
+                    color: Colors.black,
                     fontSize: 10.0,
                     fontWeight: FontWeight.w500))),
       ]));

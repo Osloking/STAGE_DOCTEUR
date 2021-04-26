@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.0.0
+  table_calendar: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,9 @@ flutter:
     - assets/json_files/simple.json
     - assets/json_files/doctor.json
     - assets/images/logo/logo.png
+    - assets/images/logo/logoB.png
+    - assets/images/logo/logoD.png
+    - assets/images/logo/logoMin.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
