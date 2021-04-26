@@ -9,24 +9,33 @@ class Accueil extends StatelessWidget {
     return Scaffold(
     
       appBar: AppBar(
-        backgroundColor: Color(0xfffb5d04),
+      
+        backgroundColor: Color(0xff6874ec),
         
         actions: <Widget>[
+        IconButton(
+              icon: Icon(
+                Icons.chat,
+                size: 30,
+                color: Color(0xffffffff),
+              ),
+              onPressed: () => {}),
+        
+          IconButton(
+              icon: Icon(
+                Icons.notifications_active,
+                size: 30,
+                color: Color(0xffffffff),
+              ),
+              onPressed: () => {}),
           IconButton(
               icon: Icon(
                 Icons.person,
                 size: 30,
-                color: Color(0xff333333),
+                color: Color(0xffffffff),
               ),
               onPressed: () => {}),
-          IconButton(
-              icon: Icon(
-                Icons.notification,
-                size: 30,
-                color: Color(0xff333333),
-              ),
-              onPressed: () => {}),
-        
+            
         ],
       ),
       drawer: Drawer(
