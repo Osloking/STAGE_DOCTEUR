@@ -6,6 +6,8 @@ import'../dashboard/mon_agenda.dart';
 import'../dashboard/accueil.dart';
 import'../dashboard/Ordonnances.dart';
 import'../dashboard/display_data/display_patient.dart';
+import'../dashboard/patient_details/patient_details.dart';
+
 class Patient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

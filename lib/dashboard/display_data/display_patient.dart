@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-
+import'../patient_details/patient_details.dart';
 class DisplayPatient extends StatefulWidget {
   @override
   _DisplayPatientState createState() => _DisplayPatientState();
@@ -31,7 +31,10 @@ InkWell(
               
               ),  ),
     onTap: () { 
-        print(showData[index]['id']); 
+        Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PatientDetails()),
+                  );
     },
 );
 
