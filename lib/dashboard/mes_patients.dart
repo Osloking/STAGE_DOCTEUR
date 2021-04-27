@@ -4,7 +4,7 @@ import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 import'../dashboard/mon_agenda.dart';
 import'../dashboard/accueil.dart';
-import'../load_json.dart';
+import'../dashboard/display_data/display_patient.dart';
 class Patient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ class Patient extends StatelessWidget {
   ),
 ),
 
-      body: ListView(
+      body: Column(
       children: <Widget>[
         SearchWidget(),
         Card(
@@ -139,6 +139,23 @@ class Patient extends StatelessWidget {
                           ),
                         ),
 
+         Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Icon(Icons.person,color:Color(0xff6874ec)),
+                            title: Text("Total Patients:",style: TextStyle(color: Colors.black),),
+                            subtitle: Text("16",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
+
+                          ),
+                        ),
+FlatButton(
+                child: Text('Voir tous patients',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                color:Color(0xff6874ec),
+                onPressed: () {  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DisplayPatient()),
+                  );},
+              ),
 
 
 
