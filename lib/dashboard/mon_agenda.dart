@@ -144,7 +144,7 @@ class Agenda extends StatelessWidget {
                           ),
                         ),
  FlatButton(
-                child: Text('Voir tous patients',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                child: Text('Voir tous les Rendez-vous',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
                 color:Color(0xff6874ec),
                 onPressed: () {  Navigator.push(
                     context,
