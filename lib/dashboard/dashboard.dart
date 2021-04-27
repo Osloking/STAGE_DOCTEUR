@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-
+import'../dashboard/mes_patients.dart';
+import'../dashboard/ordonnances.dart';
 import 'package:flutter/services.dart';
 import '../dashboard/accueil.dart';
 
@@ -62,7 +63,10 @@ class _DashBoardState extends State<DashBoard> {
          leading: Icon(Icons.people),
         title: Text('Mes Patients'),
         onTap: () {
-        
+          Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Patient()),
+                  );
         },
       ),
         ListTile(
@@ -76,8 +80,12 @@ class _DashBoardState extends State<DashBoard> {
           leading: Icon(Icons.insert_drive_file),
         title: Text('Ordonnances'),
         onTap: () {
-        
+          Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ordonnance()),
+                  );
         },
+      
       ),
             ListTile(
                 leading: Icon(Icons.folder),

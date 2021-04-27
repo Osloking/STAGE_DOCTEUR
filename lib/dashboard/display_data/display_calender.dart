@@ -128,7 +128,7 @@ class _CalendarState extends State<Calendar> {
 
     return new Scaffold(
         appBar: new AppBar(
-          title: Text("List des patients"),
+          title: Text("Mes Rendez-vous"),
         backgroundColor: Color(0xff6874ec),
         ),
         body: SingleChildScrollView(

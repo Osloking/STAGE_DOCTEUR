@@ -4,6 +4,7 @@ import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 import'../dashboard/mon_agenda.dart';
 import'../dashboard/accueil.dart';
+import'../dashboard/Ordonnances.dart';
 import'../dashboard/display_data/display_patient.dart';
 class Patient extends StatelessWidget {
   @override
@@ -101,6 +102,12 @@ class Patient extends StatelessWidget {
         title: Text('Ordonnances'),
         onTap: () {
         
+    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ordonnance()),
+                  );
+        
+
         },
       ),
             ListTile(

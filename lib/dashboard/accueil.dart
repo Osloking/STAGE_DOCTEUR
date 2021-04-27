@@ -4,6 +4,7 @@ import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 import'../dashboard/mon_agenda.dart';
 import'../dashboard/mes_patients.dart';
+import'../dashboard/ordonnances.dart';
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -99,8 +100,12 @@ class Accueil extends StatelessWidget {
           leading: Icon(Icons.insert_drive_file,color:Color(0xff6874ec)),
         title: Text('Ordonnances'),
         onTap: () {
-        
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ordonnance()),
+                  );
         },
+        
       ),
             ListTile(
                 leading: Icon(Icons.folder,color:Color(0xff6874ec)),

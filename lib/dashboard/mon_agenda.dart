@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import'../dashboard/accueil.dart';
 import'../dashboard/mes_patients.dart';
 import '../dashboard/display_data/display_calender.dart';
+import'../dashboard/ordonnances.dart';
+
 class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -100,7 +102,10 @@ class Agenda extends StatelessWidget {
           leading: Icon(Icons.insert_drive_file,color:Color(0xff6874ec)),
         title: Text('Ordonnances'),
         onTap: () {
-        
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ordonnance()),
+                  );
         },
       ),
             ListTile(
@@ -121,7 +126,7 @@ class Agenda extends StatelessWidget {
   ),
 ),
 
-      body: ListView(
+      body: Column(
       children: <Widget>[
         SearchWidget(),
         Card(
