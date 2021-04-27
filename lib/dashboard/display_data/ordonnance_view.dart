@@ -27,7 +27,7 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                  Card(
                  	margin: EdgeInsets.all(10),
                  	child :  Container(
-                    height: 700,
+                    height: 400,
                     margin: EdgeInsets.symmetric(horizontal: 20.0),
                     padding: EdgeInsets.all(20.0),
                  
@@ -98,14 +98,22 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                             
                           ],
                         ),) ,
-                        SizedBox(height: 10),
-                        ListTile(
+                     
+                   
+                      ],
+                    ),
+                  ),
+                  ),
+                                  SizedBox(height: 10),
+           Card(
+            child : ListTile(
           leading: Icon(Icons.medical_services,color:Color(0xff6874ec)),
         title: Text('Médicaments préscrits'),
         subtitle : Text('Ces élements ne sont pas modifiables.'),
       
-      ),
-                        Container(  
+      ),),
+          
+                 Container(  
                   margin: EdgeInsets.all(20),  
                   child: Table(  
                     defaultColumnWidth: FixedColumnWidth(120.0),  
@@ -115,32 +123,28 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                         width: 2),  
                     children: [  
                       TableRow( children: [  
-                        Column(children:[Text('Médicament', style: TextStyle(fontSize: 20.0))]),  
-                        Column(children:[Text('Pesologie', style: TextStyle(fontSize: 20.0))]),  
-                        Column(children:[Text('Quantité', style: TextStyle(fontSize: 20.0))]),  
+                        Column(children:[Text('Médicament', style: TextStyle(fontSize: 12.0))]),  
+                        Column(children:[Text('Pesologie', style: TextStyle(fontSize: 12.0))]),  
+                        Column(children:[Text('Quantité', style: TextStyle(fontSize: 12.0))]),  
                       ]),  
                       TableRow( children: [  
-                        Column(children:[Text('BIOTIC PLUS 500 MG MG COMPRIMÉ')]),  
+                        Column(children:[Text('BIOTIC PLUS 500 ')]),  
                         Column(children:[Text('2 soir')]),  
                         Column(children:[Text('1')]),  
                       ]),  
                       TableRow( children: [  
-                        Column(children:[Text('MELOXICAM GT 15 MG COMPRIMÉ')]),  
+                        Column(children:[Text('MELOXICAM GT 15 ')]),  
                         Column(children:[Text('1 matin')]),  
                         Column(children:[Text('2')]),  
                       ]),  
                       TableRow( children: [  
-                        Column(children:[Text('PARANTAL C 1000 0,5 G COMPRIMÉ')]),  
+                        Column(children:[Text('PARANTAL C 1000 ')]),  
                         Column(children:[Text('2 midi')]),  
                         Column(children:[Text('3')]),  
                       ]),  
                     ],  
                   ),  
                 ),
-                   
-                      ],
-                    ),
-                  ),)
                 ]),
       
     );
