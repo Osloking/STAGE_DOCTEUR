@@ -4,6 +4,7 @@ import'../dashboard/body_elements/search_bar.dart';
 import 'package:flutter/services.dart';
 import'../dashboard/accueil.dart';
 import'../dashboard/mes_patients.dart';
+import '../dashboard/display_data/display_calender.dart';
 class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -147,7 +148,7 @@ class Agenda extends StatelessWidget {
                 color:Color(0xff6874ec),
                 onPressed: () {  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Accueil()),
+                    MaterialPageRoute(builder: (context) => Calendar()),
                   );},
               ),
 

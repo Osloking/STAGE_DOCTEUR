@@ -32,6 +32,8 @@ dependencies:
   table_calendar: ^3.0.0
   shared_preferences: ^0.5.4+5
   syncfusion_flutter_calendar: ^19.1.57
+  flutter_calendar_carousel: ^2.0.1
+
 
 dev_dependencies:
   flutter_test:
