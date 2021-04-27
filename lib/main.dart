@@ -7,6 +7,7 @@ import'./dashboard/dashboard.dart';
 import'json_read.dart';
 import '../dashboard/accueil.dart';
 import'load_json.dart';
+import '../dashboard/display_data/display_calender.dart';
 
 void main() {
   runApp(MyApp());

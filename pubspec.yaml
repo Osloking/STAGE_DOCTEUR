@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.0.0
   table_calendar: ^3.0.0
+  shared_preferences: ^0.5.4+5
+  syncfusion_flutter_calendar: ^19.1.57
 
 dev_dependencies:
   flutter_test:
