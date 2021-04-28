@@ -41,29 +41,27 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     final loginButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        onPressed: () {
-           Navigator.push(
+      padding: EdgeInsets.symmetric(vertical: 10.0),
+      child:         Container(
+              margin: EdgeInsets.all(20),
+              child: FlatButton(
+                child: Text('Connexion'),
+                color: Color(0xff6874ec),
+                textColor: Colors.white,
+                onPressed: () {Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Accueil()),
-                  );
-          
-        },
-        padding: EdgeInsets.all(12),
-        color: Color(0xff6874ec),
-        child: Text('Connexion', style: TextStyle(color: Colors.white)),
-      ),
+                  );},
+              ),
+            ),
 
 
    
 
     );
 
-    final forgotLabel = FlatButton(
+    final forgotLabel = 
+    FlatButton(
       child: Text(
         'Mot de passe oublié?',
         style: TextStyle(color: Colors.black54),

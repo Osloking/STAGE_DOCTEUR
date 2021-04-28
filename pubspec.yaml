@@ -55,6 +55,8 @@ flutter:
     
     - assets/
     - assets/json_files/simple.json
+    - assets/json_files/ordonnance.json
+    - assets/json_files/document.json
     - assets/json_files/doctor.json
     - assets/json_files/person.json
     - assets/json_files/patient.json
@@ -62,6 +64,8 @@ flutter:
     - assets/images/logo/logoB.png
     - assets/images/logo/logoD.png
     - assets/images/logo/logoMin.png
+    - assets/images/icons/pres.png
+    - assets/images/icons/pdf.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
