@@ -9,6 +9,8 @@ import '../dashboard/accueil.dart';
 import'load_json.dart';
 import '../dashboard/display_data/display_calender.dart';
 import '../dashboard/display_data/ordonnance_view.dart';
+import '../authentification/login_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
       title: 'Kindacode.com',
-      home: Accueil(),
+      home: LoginPage(),
     );
   }
 }

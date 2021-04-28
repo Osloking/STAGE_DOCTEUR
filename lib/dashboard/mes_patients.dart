@@ -9,8 +9,76 @@ import'../dashboard/display_data/display_patient.dart';
 import'../dashboard/patient_details/patient_details.dart';
 
 class Patient extends StatelessWidget {
+
   @override
+
   Widget build(BuildContext context) {
+Future<void> _invitation_envoye() async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('une invitation dwaXpress a été envoyée vers le patient '),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+     
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('OK'),
+            onPressed: () {
+               Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Patient()),
+                  );
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+Future<void> _inviter_patient() async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Entrez un email pour envoyer une invitation '),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+             
+              TextField(
+      decoration: InputDecoration(
+        hintText: 'email',
+       
+        counterText: '0 characters',
+        border: OutlineInputBorder(),
+      ),
+    ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Envoyer'),
+            onPressed: () {
+             _invitation_envoye() ;
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+
     return Scaffold(
     
       appBar: AppBar(
@@ -142,7 +210,7 @@ class Patient extends StatelessWidget {
               child: FlatButton(
                 child: Text('inviter un patient',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
                 color:Colors.green,
-                onPressed: () {},
+                onPressed: () {_inviter_patient();},
               ),
             ),           
                           ),
@@ -200,3 +268,5 @@ Widget _createDrawerHeader() {
                     fontWeight: FontWeight.w500))),
       ]));
 }
+
+
