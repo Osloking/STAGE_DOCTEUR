@@ -27,7 +27,7 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                  Card(
                  	margin: EdgeInsets.all(10),
                  	child :  Container(
-                    height: 400,
+                    height: 300,
                     margin: EdgeInsets.symmetric(horizontal: 20.0),
                     padding: EdgeInsets.all(20.0),
                  
@@ -38,16 +38,16 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold)),
                         
-                        SizedBox(height: 30),
+                        SizedBox(height: 10),
                        Container(
                        	decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.blue.withOpacity(0.5),
                           
                         )
                       ],
-                      color: Colors.grey,
+                      color: Color(0xffe8ecec),
                       borderRadius: BorderRadius.circular(10),
                     ),
                        	child : Column(
@@ -147,7 +147,7 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                 ),
                 Column (
 children:[
- Row(
+ Column(
                       children: [
                           Container(
               margin: EdgeInsets.all(5),

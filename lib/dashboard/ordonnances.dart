@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import'../dashboard/accueil.dart';
 import'../dashboard/mes_patients.dart';
 import '../dashboard/display_data/display_calender.dart';
+import'../dashboard/documents.dart';
 
 import '../dashboard/display_data/display_ordonnance.dart';
 import'../dashboard/mon_agenda.dart';
@@ -113,7 +114,10 @@ class Ordonnance extends StatelessWidget {
                 leading: Icon(Icons.folder,color:Color(0xff6874ec)),
         title: Text('Docements'),
         onTap: () {
-        
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Document()),
+                  );
         },
       ),
                  ListTile(

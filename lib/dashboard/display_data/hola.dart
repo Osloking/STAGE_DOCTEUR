@@ -1,50 +1,75 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
-import'../patient_details/patient_details.dart';
-class DisplayPatient extends StatefulWidget {
+import 'dart:async';
+
+
+
+class SplashScreen extends StatefulWidget {
   @override
-  _DisplayPatientState createState() => _DisplayPatientState();
+  State<StatefulWidget> createState() => StartState();
 }
 
-class _DisplayPatientState extends State<DisplayPatient> {
+class StartState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+    return initScreen(context);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  startTimer() async {
+    var duration = Duration(seconds: 8);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Connexion()));
+  }
+
+  initScreen(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List des patients"),
-        backgroundColor: Color(0xff6874ec),),
+      backgroundColor: Colors.white,
       body: Center(
-        child: FutureBuilder(builder: (context, snapshot){
-          var showData=json.decode(snapshot.data.toString());
-          return ListView.builder(
-            
-            itemBuilder: (BuildContext context, int index){
-              return 
-InkWell(
-    child:     Card (
-                margin: EdgeInsets.all(10),
-                          child:ListTile(
-                            leading : Icon(Icons.person,color:Color(0xff6874ec)),
-                title: Text(showData[index]['id']),
-                subtitle: Text(showData[index]['name']),
-              
-              
-              ),  ),
-    onTap: () { 
-        
-    },
-);
-
-
-          
-            },
-            itemCount: showData.length,
-          );
-        }, future: DefaultAssetBundle.of(context).loadString("assets/json_files/ordonnance.json"),
-        
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Image.asset("asstets/images/redhope.PNG"),
+            ),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+<<<<<<< HEAD
+            Text(
+              'Designed by',
+              style: TextStyle(fontSize: 20.0, color: Colors.red),
+=======
+            InkWell(
+              child: Text(
+                'Designed by InnovEducation',
+                style: TextStyle(fontSize: 20.0, color: Colors.red),
+              ),
+              //onTap: () => launch("http://innoveducation.com/"),
+>>>>>>> d333dc909878d758aaef286dc64eb3bf6fd0d9fa
+            ),
+            SizedBox(height: 40),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+            CircularProgressIndicator(
+              backgroundColor: Colors.red,
+              strokeWidth: 2,
+            ),
+            InkWell(
+              child: Container(
+                child: Image.asset("asstets/images/inoov_logo.PNG"),
+              ),
+              onTap: () => launch("http://innoveducation.com/"),
+            ),
+            SizedBox(height: 40),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+          ],
         ),
       ),
-      
     );
   }
 }

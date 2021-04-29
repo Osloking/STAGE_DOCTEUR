@@ -7,6 +7,7 @@ import'../dashboard/accueil.dart';
 import'../dashboard/Ordonnances.dart';
 import'../dashboard/display_data/display_patient.dart';
 import'../dashboard/patient_details/patient_details.dart';
+import'../dashboard/documents.dart';
 
 class Patient extends StatelessWidget {
 
@@ -184,7 +185,11 @@ Future<void> _inviter_patient() async {
                 leading: Icon(Icons.folder,color:Color(0xff6874ec)),
         title: Text('Docements'),
         onTap: () {
-        
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Document()),
+                  );
+
         },
       ),
                  ListTile(

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import'../dashboard/mon_agenda.dart';
 import'../dashboard/mes_patients.dart';
 import'../dashboard/ordonnances.dart';
+import'../dashboard/documents.dart';
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -111,6 +112,10 @@ class Accueil extends StatelessWidget {
                 leading: Icon(Icons.folder,color:Color(0xff6874ec)),
         title: Text('Docements'),
         onTap: () {
+          Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Document()),
+                  );
         
         },
       ),

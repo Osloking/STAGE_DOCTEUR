@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import'../display_data/ordonnances_list.dart';
 import'../display_data/documents_list.dart';
+import'../prescription/prescription.dart';
 class PatientDetails extends StatefulWidget {
   @override
   PatientDetailsState createState() => PatientDetailsState();
@@ -35,7 +36,7 @@ class PatientDetailsState extends State<PatientDetails> {
                         ),
 
 
-            Row(
+            Column(
                       children: [
                           Container(
               margin: EdgeInsets.all(10),
@@ -57,12 +58,18 @@ class PatientDetailsState extends State<PatientDetails> {
                 child:  Row( 
                   children: <Widget>[
                     Icon(Icons.edit_outlined),
-                    Text("Préscrire En Ligne")
+                    Text("Préscrire en ligne")
                   ],
                 ),
                 color:  Color(0xff6874ec),
                 textColor: Colors.white,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Prescrire()),
+                  );
+
+                  },
               ),
             ),
                       ]
@@ -100,8 +107,6 @@ class PatientDetailsState extends State<PatientDetails> {
                 ),
               ),
             ),
-
-            // create widgets for each tab bar here
             Expanded(
               child: TabBarView(
                 children: [

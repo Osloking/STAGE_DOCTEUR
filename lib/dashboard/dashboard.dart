@@ -4,6 +4,7 @@ import'../dashboard/mes_patients.dart';
 import'../dashboard/ordonnances.dart';
 import 'package:flutter/services.dart';
 import '../dashboard/accueil.dart';
+import'../dashboard/documents.dart';
 
 
 class DashBoard extends StatefulWidget {
@@ -91,7 +92,11 @@ class _DashBoardState extends State<DashBoard> {
                 leading: Icon(Icons.folder),
         title: Text('Docements'),
         onTap: () {
-        
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Document()),
+                  );
+
         },
       ),
                  ListTile(

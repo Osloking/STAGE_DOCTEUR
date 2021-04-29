@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:table_calendar/table_calendar.dart';
+import 'dart:async';
 
 import 'package:flutter/services.dart';
 import'./dashboard/dashboard.dart';
@@ -22,55 +23,73 @@ class MyApp extends StatelessWidget {
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
       title: 'DwaXpress',
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
 
 
-class DisplayPatient extends StatefulWidget {
+
+class SplashScreen extends StatefulWidget {
   @override
-  _DisplayPatientState createState() => _DisplayPatientState();
+  State<StatefulWidget> createState() => StartState();
 }
 
-class _DisplayPatientState extends State<DisplayPatient> {
+class StartState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+    return initScreen(context);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  startTimer() async {
+    var duration = Duration(seconds: 5);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
+  }
+
+  initScreen(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List des patients"),
-        backgroundColor: Color(0xff6874ec),),
+      backgroundColor: Colors.white,
       body: Center(
-        child: FutureBuilder(builder: (context, snapshot){
-          var showData=json.decode(snapshot.data.toString());
-          return ListView.builder(
-            
-            itemBuilder: (BuildContext context, int index){
-              return 
-InkWell(
-    child:     Card (
-                margin: EdgeInsets.all(10),
-                          child:ListTile(
-                            leading : Icon(Icons.person,color:Color(0xff6874ec)),
-                title: Text(showData[index]['id']),
-                subtitle: Text(showData[index]['par_qui']),
-              
-              
-              ),  ),
-    onTap: () { 
-        
-    },
-);
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Image.asset("assets/images/logo/logoD.png"),
+            ),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
 
 
-          
-            },
-            itemCount: showData.length,
-          );
-        }, future: DefaultAssetBundle.of(context).loadString("assets/json_files/ordonnance.json"),
-        
+            InkWell(
+              child: Text(
+                'Designed by SehaChain',
+                style: TextStyle(fontSize: 20.0, color: Colors.red),
+              ),
+              
+
+            ),
+            SizedBox(height: 40),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+            CircularProgressIndicator(
+              backgroundColor: Colors.red,
+              strokeWidth: 2,
+            ),
+         
+            SizedBox(height: 40),
+            Padding(padding: EdgeInsets.only(top: 20.0)),
+          ],
         ),
       ),
-      
     );
   }
 }
