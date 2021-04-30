@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import'../patient_details/patient_details.dart';
+import'../prescription/ordonnance_result.dart';
+
 enum SingingCharacter { lafayette, jefferson,tree }
 class Prescrire extends StatefulWidget {
   @override
@@ -276,7 +278,10 @@ Card(
                 color:  Color(0xff6874ec),
                 textColor: Colors.white,
                 onPressed: () {
-                 
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrdonnanceResult()),
+                  );
 
                   },
               ),
