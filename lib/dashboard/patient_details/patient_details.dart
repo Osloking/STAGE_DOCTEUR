@@ -24,8 +24,9 @@ class PatientDetailsState extends State<PatientDetails> {
         
         ),
         body: Column(
+
           children: <Widget>[
-            // construct the profile details widget here
+            
            Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
@@ -36,44 +37,52 @@ class PatientDetailsState extends State<PatientDetails> {
                         ),
 
 
-            Column(
+            Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                       children: [
-                          Container(
-              margin: EdgeInsets.all(10),
-              child: FlatButton(
-                child:  Row( 
+
+RaisedButton(
+
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.green,                              textColor: Colors.white,
+                              child:Row( 
                   children: <Widget>[
                     Icon(Icons.upload_outlined),
                     Text("importer un fichier")
                   ],
                 ),
-                color: Colors.green,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-                              Container(
-              margin: EdgeInsets.all(10),
-              child: FlatButton(
-                child:  Row( 
+                              onPressed: () {
+                               
+                              },
+                            ),
+
+                          
+ RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Color(0xff6874ec),                              textColor: Colors.white,
+                              child: Row( 
                   children: <Widget>[
                     Icon(Icons.edit_outlined),
                     Text("Préscrire en ligne")
                   ],
                 ),
-                color:  Color(0xff6874ec),
-                textColor: Colors.white,
-                onPressed: () {
-                  Navigator.push(
+                              onPressed: () {
+                               Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Prescrire()),
                   );
+                              },
+                            ),
 
-                  },
-              ),
-            ),
+                             
                       ]
                   ),
+
             SizedBox(
               height: 50,
               child: AppBar(

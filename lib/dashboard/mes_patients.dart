@@ -8,6 +8,7 @@ import'../dashboard/Ordonnances.dart';
 import'../dashboard/display_data/display_patient.dart';
 import'../dashboard/patient_details/patient_details.dart';
 import'../dashboard/documents.dart';
+import '../dashboard/profile/profile_page.dart';
 
 class Patient extends StatelessWidget {
 
@@ -114,7 +115,10 @@ Future<void> _inviter_patient() async {
                 size: 30,
                 color: Color(0xffffffff),
               ),
-              onPressed: () => {}),
+              onPressed: () => {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  ),}),
          
             
         ],
@@ -209,14 +213,18 @@ Future<void> _inviter_patient() async {
         Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            title: Text("Repertoir Patients",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
-                            subtitle: Container(
-              margin: EdgeInsets.all(20),
-              child: FlatButton(
-                child: Text('inviter un patient',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                color:Colors.green,
-                onPressed: () {_inviter_patient();},
-              ),
+                            leading: Text("Repertoir Patients :",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
+                            title: Container(
+             
+              child: RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.green,
+                              textColor: Colors.white,
+                              child:  Text('inviter un patient',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),    
+                                    onPressed: () {_inviter_patient();},
+                            ),
             ),           
                           ),
                         ),
@@ -230,14 +238,18 @@ Future<void> _inviter_patient() async {
 
                           ),
                         ),
-FlatButton(
-                child: Text('Voir tous patients',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                color:Color(0xff6874ec),
-                onPressed: () {  Navigator.push(
+RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color:Color(0xff6874ec),
+                              textColor: Colors.white,
+                              child:  Text('Voir tous patients',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                              onPressed: () {  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DisplayPatient()),
                   );},
-              ),
+                            ),
 
 
 

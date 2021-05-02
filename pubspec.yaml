@@ -33,6 +33,7 @@ dependencies:
   shared_preferences: ^0.5.4+5
   syncfusion_flutter_calendar: ^19.1.57
   flutter_calendar_carousel: ^2.0.1
+  steppers: ^0.0.1
 
 
 dev_dependencies:
@@ -66,6 +67,7 @@ flutter:
     - assets/images/logo/logoMin.png
     - assets/images/icons/pres.png
     - assets/images/icons/pdf.png
+    - assets/images/icons/profile.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

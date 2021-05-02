@@ -6,7 +6,7 @@ import'../dashboard/accueil.dart';
 import'../dashboard/mes_patients.dart';
 import '../dashboard/display_data/display_calender.dart';
 import'../dashboard/documents.dart';
-
+import '../dashboard/profile/profile_page.dart';
 import '../dashboard/display_data/display_ordonnance.dart';
 import'../dashboard/mon_agenda.dart';
 class Ordonnance extends StatelessWidget {
@@ -46,7 +46,10 @@ class Ordonnance extends StatelessWidget {
                 size: 30,
                 color: Color(0xffffffff),
               ),
-              onPressed: () => {}),
+              onPressed: () => {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  ),}),
          
             
         ],
@@ -147,20 +150,24 @@ class Ordonnance extends StatelessWidget {
  Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
-                            leading: Icon(Icons.person,color:Color(0xff6874ec)),
+                            leading: Icon(Icons.description,color:Color(0xff6874ec)),
                             title: Text("Total Ordonnances:",style: TextStyle(color: Colors.black),),
                             subtitle: Text("16",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),
- FlatButton(
-                child: Text('Voir tous les Ordonnances',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                color:Color(0xff6874ec),
-                onPressed: () {  Navigator.push(
+RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color:Color(0xff6874ec),
+                              textColor: Colors.white,
+                              child:  Text('tous les Ordonnances',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                             onPressed: () {  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Displayordonnance()),
                   );},
-              ),
+                            ),
 
 
 

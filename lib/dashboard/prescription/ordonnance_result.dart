@@ -147,7 +147,7 @@ class _OrdonnanceResultState extends State<OrdonnanceResult> {
                 ),
                 Column (
 children:[
- Column(
+ Row(
                       children: [
                           Container(
               margin: EdgeInsets.all(5),
@@ -180,7 +180,14 @@ children:[
                   );},
               ),
             ),
-                              Container(
+                              
+
+
+                      ]
+                  ),
+ /* Row(
+children :[
+Container(
               margin: EdgeInsets.all(5),
               child: FlatButton(
                 child:  Row( 
@@ -208,10 +215,8 @@ children:[
                 onPressed: () {},
               ),
             ),
-
-
-                      ]
-                  ),
+]
+  )*/
 
                  
 ]

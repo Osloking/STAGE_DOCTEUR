@@ -7,6 +7,8 @@ import'../dashboard/mes_patients.dart';
 import '../dashboard/display_data/display_calender.dart';
 import'../dashboard/ordonnances.dart';
 import'../dashboard/documents.dart';
+import '../dashboard/profile/profile_page.dart';
+
 
 class Agenda extends StatelessWidget {
   @override
@@ -45,7 +47,10 @@ class Agenda extends StatelessWidget {
                 size: 30,
                 color: Color(0xffffffff),
               ),
-              onPressed: () => {}),
+              onPressed: () => {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  ),}),
          
             
         ],

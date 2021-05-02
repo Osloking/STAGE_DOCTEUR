@@ -5,37 +5,74 @@ import'../patient_details/patient_details.dart';
 import'../prescription/ordonnance_result.dart';
 
 enum SingingCharacter { lafayette, jefferson,tree }
-class Prescrire extends StatefulWidget {
+class Prescrire  extends StatefulWidget {
+ 
+
   @override
-  _PrescrireState createState() => _PrescrireState();
+  _PrescrireState createState() => new _PrescrireState();
 }
 
 class _PrescrireState extends State<Prescrire> {
-	SingingCharacter? _character = SingingCharacter.lafayette;
+  int _currentStep = 0;
+  SingingCharacter? _character = SingingCharacter.lafayette;
 
-	String? dropdownvalue = 'Apple';
+  String? dropdownvalue = 'Apple';
 
   var items =  ['Apple','Banana','Grapes','Orange','watermelon','Pineapple','hhh'];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Préscription en ligne"),
+    return new Scaffold(
+       appBar: AppBar(title: Text("Préscription en ligne"),
         backgroundColor: Color(0xff6874ec),),
-     
-      body : ListView(
- 
-    padding: EdgeInsets.zero,
-    children: <Widget>[
-    SizedBox(
-                height: 30,
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Stepper(
+          type: StepperType.horizontal,
+          steps: _mySteps(),
+          currentStep: this._currentStep,
+          onStepTapped: (step) {
+            setState(() {
+              this._currentStep = step;
+            });
+          },
+          onStepContinue: () {
+            setState(() {
+              if (this._currentStep < this._mySteps().length - 1) {
+                this._currentStep = this._currentStep + 1;
+              } else {
+                //Logic to check if everything is completed
+                //print('Completed, check fields.');
+              }
+            });
+          },
+          onStepCancel: () {
+            setState(() {
+              if (this._currentStep > 0) {
+                this._currentStep = this._currentStep - 1;
+              } else {
+                this._currentStep = 0;
+              }
+            });
+          },
+        ),
+      ),
+    );
+  }
+
+  List<Step> _mySteps() {
+    List<Step> _steps = [
+      Step(
+        title: Text(
+          'Médicament',
+          style: TextStyle(fontSize: 10),
+        ),
+        content: 
     Card(
-                          margin: EdgeInsets.all(10),
+                          margin: EdgeInsets.all(5),
                           child: ListTile(
                             leading :FlatButton(
-                child: Text('Ajouter un médicament'),
-                color: Color(0xff6874ec),
+                child: Text('Ajouter un Médicament'),
+                color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {},
               ),
@@ -67,17 +104,17 @@ class _PrescrireState extends State<Prescrire> {
 
                           ),
                         ),
-   
-  
-    SizedBox(
-                height: 30,
-              ),
-   Card(
+        isActive: _currentStep >= 0,
+      ),
+      Step(
+        title: Text('Posologie', style: TextStyle(fontSize: 10)),
+
+        content: Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
                             leading :FlatButton(
                 child: Text('Posologie'),
-                color: Color(0xff6874ec),
+                color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {},
               ),
@@ -121,7 +158,13 @@ class _PrescrireState extends State<Prescrire> {
                               
                           ),
                         ),
-   
+        isActive: _currentStep >= 1,
+      ),
+      Step(
+        title: Text('Détails', style: TextStyle(fontSize: 10)),
+        content: Column (
+          children : [
+
     SizedBox(
                 height: 30,
               ),
@@ -177,12 +220,19 @@ class _PrescrireState extends State<Prescrire> {
                   ),
                 ),
               ),
+          ]
+          ),
+        isActive: _currentStep >= 2,
+      ),
+      Step(
+        title: Text('Insuffisance', style: TextStyle(fontSize: 10)),
+        content: Column ( children : [
 Card(
                           margin: EdgeInsets.all(10),
                           child: ListTile(
                             leading: Text("Insuffisance\n rénal",style: TextStyle(color: Colors.black),),
                             title : Column(
-                            	children :[
+                              children :[
  RadioListTile<SingingCharacter>(
           title: const Text('Aucune'),
           value: SingingCharacter.lafayette,
@@ -214,9 +264,9 @@ Card(
           },
         ),
            
-                            	]
+                              ]
 
-                            	),
+                              ),
                             
 
                           ),
@@ -227,7 +277,7 @@ Card(
                           child: ListTile(
                             leading: Text("Insuffisance\n hépatique",style: TextStyle(color: Colors.black),),
                             title : Column(
-                            	children :[
+                              children :[
  RadioListTile<SingingCharacter>(
           title: const Text('Aucune'),
           value: SingingCharacter.lafayette,
@@ -259,37 +309,19 @@ Card(
           },
         ),
            
-                            	]
+                              ]
 
-                            	),
+                              ),
                             
 
                           ),
                         ),
-  Container(
-              margin: EdgeInsets.all(10),
-              child: FlatButton(
-                child:  Row( 
-                  children: <Widget>[
-                    Icon(Icons.send),
-                    Text("Envoyer le Préscription")
-                  ],
-                ),
-                color:  Color(0xff6874ec),
-                textColor: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OrdonnanceResult()),
-                  );
+          ]),
+        
+        isActive: _currentStep >= 3,
+      )
 
-                  },
-              ),
-            ),
-
- 
-]
-),
-    );
+    ];
+    return _steps;
   }
 }

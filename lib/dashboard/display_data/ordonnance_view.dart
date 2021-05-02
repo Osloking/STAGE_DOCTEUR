@@ -147,51 +147,63 @@ class _OrdonnanceViewState extends State<OrdonnanceView> {
                 ),
                 Column (
 children:[
- Column(
+
+ Row(            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+
                       children: [
-                          Container(
-              margin: EdgeInsets.all(5),
-              child: FlatButton(
-                child:  Row( 
+                         
+                          RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Color(0xff6874ec),                              textColor: Colors.white,
+                              child:  Row( 
                   children: <Widget>[
                     Icon(Icons.send),
                     Text("Envoyer")
                   ],
                 ),
-                color: Color(0xff6874ec),
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-                              Container(
-              margin: EdgeInsets.all(5),
-              child: FlatButton(
-                child:  Row( 
+                              onPressed: () {
+                               
+                              },
+                            ),
+                         
+                             
+             RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.red,
+                              textColor: Colors.white,
+                              child:  Row( 
                   children: <Widget>[
                     Icon(Icons.save_outlined),
                     Text("Télécharger")
                   ],
                 ),
-                color: Colors.red,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-                                                      Container(
-              margin: EdgeInsets.all(5),
-              child: FlatButton(
-                child:  Row( 
+                              onPressed: () {
+                               
+                              },
+                            ),
+
+
+ RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.orange,
+                              textColor: Colors.white,
+                              child:  Row( 
                   children: <Widget>[
                     Icon(Icons.print_outlined),
                     Text("Imprimer")
                   ],
                 ),
-                color: Colors.orange,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-
+                              onPressed: () {
+                               
+                              },
+                            ),
 
                       ]
                   ),

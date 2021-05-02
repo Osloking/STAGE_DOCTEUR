@@ -5,6 +5,7 @@ import'../dashboard/ordonnances.dart';
 import 'package:flutter/services.dart';
 import '../dashboard/accueil.dart';
 import'../dashboard/documents.dart';
+import '../dashboard/profile/profile_page.dart';
 
 
 class DashBoard extends StatefulWidget {

@@ -6,6 +6,7 @@ import'../dashboard/mon_agenda.dart';
 import'../dashboard/mes_patients.dart';
 import'../dashboard/ordonnances.dart';
 import'../dashboard/documents.dart';
+import '../dashboard/profile/profile_page.dart';
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,14 @@ class Accueil extends StatelessWidget {
                 size: 30,
                 color: Color(0xffffffff),
               ),
-              onPressed: () => {}),
+              onPressed: () => {
+
+               Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  ),
+
+               }),
          
             
         ],
