@@ -12,7 +12,7 @@ import '../dashboard/display_data/display_calender.dart';
 import '../dashboard/display_data/ordonnance_view.dart';
 import '../authentification/login_page.dart';
 import '../dashboard/agenda/agenda.dart';
-
+import 'wid.dart';
 void main() {
   runApp(MyApp());
 }
