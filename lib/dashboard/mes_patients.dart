@@ -9,7 +9,7 @@ import'../dashboard/display_data/display_patient.dart';
 import'../dashboard/patient_details/patient_details.dart';
 import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
-
+import '../dashboard/agenda/agenda.dart';
 class Patient extends StatelessWidget {
 
   @override
@@ -150,7 +150,7 @@ Future<void> _inviter_patient() async {
         onTap: () {
             Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Agenda()),
+                    MaterialPageRoute(builder: (context) => EventCalendar()),
                   );
           
         },

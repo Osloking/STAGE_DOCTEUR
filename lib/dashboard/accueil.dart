@@ -7,6 +7,7 @@ import'../dashboard/mes_patients.dart';
 import'../dashboard/ordonnances.dart';
 import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
+import '../dashboard/agenda/agenda.dart';
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -83,7 +84,7 @@ class Accueil extends StatelessWidget {
         onTap: () {
             Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Agenda()),
+                    MaterialPageRoute(builder: (context) => EventCalendar()),
                   );
           
         },

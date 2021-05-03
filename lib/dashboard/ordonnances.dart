@@ -9,6 +9,7 @@ import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
 import '../dashboard/display_data/display_ordonnance.dart';
 import'../dashboard/mon_agenda.dart';
+import '../dashboard/agenda/agenda.dart';
 class Ordonnance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class Ordonnance extends StatelessWidget {
           
            Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Agenda()),
+                    MaterialPageRoute(builder: (context) => EventCalendar()),
                   );
         },
       ),

@@ -6,8 +6,7 @@ import 'package:flutter/services.dart';
 import '../dashboard/accueil.dart';
 import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
-
-
+import '../dashboard/agenda/agenda.dart';
 class DashBoard extends StatefulWidget {
   @override
   _DashBoardState createState() => _DashBoardState();

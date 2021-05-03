@@ -8,7 +8,7 @@ import '../dashboard/display_data/display_calender.dart';
 import'../dashboard/ordonnances.dart';
 import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
-
+import '../dashboard/agenda/agenda.dart';
 
 class Agenda extends StatelessWidget {
   @override
@@ -81,9 +81,10 @@ class Agenda extends StatelessWidget {
         title: Text('Mon Agenda'),
         onTap: () {
           
-           Navigator.push(
+           
+Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Agenda()),
+                    MaterialPageRoute(builder: (context) => EventCalendar()),
                   );
         },
       ),
