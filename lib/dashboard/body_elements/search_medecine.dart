@@ -26,10 +26,7 @@ class _AppState extends State<SearchableDropdownApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: const Text('Searchable Dropdown Example App'),
-        ),
+        
         body: new SingleChildScrollView(
           child: Container(
             height: 571,

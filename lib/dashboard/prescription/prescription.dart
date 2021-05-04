@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import'../patient_details/patient_details.dart';
 import'../prescription/ordonnance_result.dart';
+import '../body_elements/search_medecine.dart';
+import 'package:searchable_dropdown/searchable_dropdown.dart';
+import 'dart:async';
+import 'dart:convert';
 
 enum SingingCharacter { lafayette, jefferson,tree }
 class Prescrire  extends StatefulWidget {
@@ -11,23 +15,31 @@ class Prescrire  extends StatefulWidget {
   @override
   _PrescrireState createState() => new _PrescrireState();
 }
+List<String> localData =  ['ABILIFY 10 MG, Comprimé','ABILIFY 15 MG, Comprimé','ABSTRAL 100 µG, Comprimé sublingual','ACARBOSE LAPROPHAN 50 MG, Comprimé','ACDigest, Gélule','ACEPRIL PLUS 4 MG, Comprimé','D-BLASTIN 20 MG, Poudre pour perfusion','D-STRESS, Comprimé','EAU P.P.I. Injectable 5 ML','FABRAZYME 35 MG','GABAMOX 300 MG, Gélule'];
 
 class _PrescrireState extends State<Prescrire> {
   int _currentStep = 0;
   SingingCharacter? _character = SingingCharacter.lafayette;
 
   String? dropdownvalue = 'Apple';
-
+  Map<String, String> selectedValueMap = Map();
   var items =  ['Apple','Banana','Grapes','Orange','watermelon','Pineapple','hhh'];
   @override
+  void initState() {
+    //selectedValueMap["local"] = null;
+    
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return new Scaffold(
        appBar: AppBar(title: Text("Préscription en ligne"),
         backgroundColor: Color(0xff6874ec),),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Stepper(
-          type: StepperType.horizontal,
+      body: ListView(
+        //padding: const EdgeInsets.all(8.0),
+        children : [
+  Stepper(
+          type: StepperType.vertical,
           steps: _mySteps(),
           currentStep: this._currentStep,
           onStepTapped: (step) {
@@ -55,9 +67,104 @@ class _PrescrireState extends State<Prescrire> {
             });
           },
         ),
+ Row(            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+
+                      children: [
+                         
+                          RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Color(0xff6874ec),                              textColor: Colors.white,
+                              child:  Row( 
+                  children: <Widget>[
+                    Icon(Icons.send),
+                    Text("Envoyer")
+                  ],
+                ),
+                              onPressed: () {
+                               
+                              },
+                            ),
+                         
+                             
+             RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.red,
+                              textColor: Colors.white,
+                              child:  Row( 
+                  children: <Widget>[
+                    Icon(Icons.save_outlined),
+                    Text("Télécharger")
+                  ],
+                ),
+                              onPressed: () {
+                               
+                              },
+                            ),
+
+
+ RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.orange,
+                              textColor: Colors.white,
+                              child:  Row( 
+                  children: <Widget>[
+                    Icon(Icons.print_outlined),
+                    Text("Imprimer")
+                  ],
+                ),
+                              onPressed: () {
+                               
+                              },
+                            ),
+
+                      ]
+                  ),
+        ]
+
+
       ),
     );
   }
+
+ Widget getSearchableDropdown(List<String> listData, mapKey) {
+    List<DropdownMenuItem> items = [];
+    for(int i=0; i < listData.length; i++) {
+      items.add(new DropdownMenuItem(
+          child: new Text(
+            listData[i],
+          ),
+          value: listData[i],
+        )
+      );
+    }
+    return new SearchableDropdown(
+      items: items,
+      value: selectedValueMap[mapKey],
+      isCaseSensitiveSearch: false,
+      hint: new Text(
+        'Select One'
+      ),
+      searchHint: new Text(
+        'Select One',
+        style: new TextStyle(
+            fontSize: 20
+        ),
+      ),
+      onChanged: (value) {
+        setState(() {
+          selectedValueMap[mapKey] = value;
+        });
+      },
+    );
+  }
+
 
   List<Step> _mySteps() {
     List<Step> _steps = [
@@ -66,44 +173,37 @@ class _PrescrireState extends State<Prescrire> {
           'Médicament',
           style: TextStyle(fontSize: 10),
         ),
-        content: 
-    Card(
-                          margin: EdgeInsets.all(5),
-                          child: ListTile(
-                            leading :FlatButton(
-                child: Text('Ajouter un Médicament'),
-                color: Colors.blue,
-                textColor: Colors.white,
-                onPressed: () {},
+        content: SingleChildScrollView(
+          child: Container(
+            height: 100,
+            width: double.infinity,
+            color: Colors.white.withOpacity(0.4),
+            child: Container(
+              padding: EdgeInsets.only(left: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Container(
+                    child: new Text(
+                      'Ajouter un Médicament',
+                      style: new TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                      ),
+                    )
+                  ),
+                  // use local data for providing options and store selected value to the key "local"
+                  getSearchableDropdown(localData, "local"),
+                
+                
+                ],
               ),
-              title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DropdownButton(
-                value: dropdownvalue,
-
-                  icon: Icon(Icons.keyboard_arrow_down),
-
-                  items:items.map((String items) {
-                       return DropdownMenuItem(
-                           value: items,
-                           child: Text(items)
-                       );
-                  }
-                  ).toList(),
-
-                onChanged: (String? newValue){
-                  setState(() {
-                    dropdownvalue = newValue;
-                  });
-                },
-
-              ),
-            ],
+            ),
           ),
+        ),
 
-                          ),
-                        ),
+
         isActive: _currentStep >= 0,
       ),
       Step(
