@@ -14,7 +14,7 @@ class _DocumentState extends State<Document> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Patient Details',
+            'Documents',
           ),
           
           backgroundColor: Color(0xff6874ec),
@@ -82,7 +82,7 @@ InkWell(
     maxWidth: 64,
     maxHeight: 64,
   ),
-  child: Image.asset("assets/images/icons/pdf.png"),
+  child: Image.asset("assets/images/icons/pres.png"),
 ),
                 title: Text(showData[index]['id']),
                 subtitle: Text(showData[index]['par_qui']),
@@ -99,7 +99,7 @@ InkWell(
             },
             itemCount: showData.length,
           );
-        }, future: DefaultAssetBundle.of(context).loadString("assets/json_files/document.json"),
+        }, future: DefaultAssetBundle.of(context).loadString("assets/json_files/ordonnance.json"),
         
         ),
       ),

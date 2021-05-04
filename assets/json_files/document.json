@@ -3,62 +3,74 @@
     {
       "id": "p1",
       "par_qui": "radiographie pulmonaire ",
-      "description": "Description 1"
+      "description": "Description 1",
+      "access":"limité"
     },
     {
       "id": "p2",
       "par_qui": "radiographie pulmonaire ",
-      "description": "Description 2"
+      "description": "Description 2",
+      "access":"limité"
     },
     {
       "id": "p3",
       "par_qui": "radiographie pulmonaire ",
-      "description": "Description 3"
+      "description": "Description 3",
+      "access":"limité"
     },
      {
       "id": "p4",
       "par_qui": "cardiographie",
-      "description": "Description 4"
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p4",
       "par_qui": "Rapport opération ",
-      "description": "Description 4"
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p4",
       "par_qui": "Résultat d'analyses ",
-      "description": "Description 4"
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p5",
       "par_qui": "radiographie pulmonaire ",
-      "description": "Description 5"
+      "description": "Description 5",
+      "access":"limité"
     },
 
      {
       "id": "p6",
       "par_qui": "cardiographie",
-      "description": "Description 6"
+      "description": "Description 6",
+      "access":"limité"
     },
     {
       "id": "p7",
       "par_qui": "Rapport opération ",
-      "description": "Description 7"
+      "description": "Description 7",
+      "access":"limité"
     },
     {
       "id": "p8",
       "par_qui": "Résultat d'analyses ",
-      "description": "Description 8"
+      "description": "Description 8",
+      "access":"limité"
     },
     {
       "id": "p9",
       "par_qui": "cardiographie ",
-      "description": "Description 9"
+      "description": "Description 9",
+      "access":"limité"
     },
     {
       "id": "p10",
       "par_qui": "radiographie pulmonaire ",
-      "description": "Description 10"
+      "description": "Description 10",
+      "access":"limité"
     }
   ]

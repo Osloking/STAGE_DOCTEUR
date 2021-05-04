@@ -32,7 +32,32 @@ InkWell(
   child: Image.asset("assets/images/icons/pres.png"),
 ),
                 title: Text(showData[index]['id']),
-                subtitle: Text(showData[index]['par_qui']),
+                subtitle: 
+Row ( children : [
+  
+
+RaisedButton(
+
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white)),
+                              color: Colors.green,                              textColor: Colors.white,
+                              child:Row( 
+                  children: <Widget>[
+                    Icon(Icons.accessibility_outlined),
+                    Text(showData[index]['access']),
+                  ],
+                ),
+                              onPressed: () {
+                               
+                              },
+                            ),
+SizedBox(width:25),
+Text(showData[index]['par_qui']),
+
+
+  ])
+                
               
               
               ),  ),

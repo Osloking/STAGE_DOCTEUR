@@ -2,63 +2,75 @@
  [
     {
       "id": "p1",
-      "par_qui": "par : Vous",
-      "description": "Description 1"
+      "par_qui": "par: Vous  ",
+      "description": "Description 1",
+      "access":"limité"
     },
     {
       "id": "p2",
-      "par_qui": "par : Dr. HAFDI Ahmed",
-      "description": "Description 2"
+      "par_qui": "par: HADFI ABD EL MOUEMNE  ",
+      "description": "Description 2",
+      "access":"limité"
     },
     {
       "id": "p3",
-      "par_qui": "par : Vous",
-      "description": "Description 3"
+      "par_qui": "radiographie pulmonaire ",
+      "description": "Description 3",
+      "access":"limité"
     },
      {
       "id": "p4",
-      "par_qui": "par : Dr. Kouara Chaimae",
-      "description": "Description 4"
+      "par_qui": "par: Vous ",
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p4",
-      "par_qui": "par : Vous",
-      "description": "Description 4"
+      "par_qui": "par: HADFI ABD EL MOUEMNE",
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p4",
-      "par_qui": "par : Dr. HAFDI Ahmed",
-      "description": "Description 4"
+      "par_qui": "par: Vous ",
+      "description": "Description 4",
+      "access":"limité"
     },
      {
       "id": "p5",
-      "par_qui": "par : Dr. El Khalifa Oussama",
-      "description": "Description 5"
+      "par_qui": "par: Vous ",
+      "description": "Description 5",
+      "access":"limité"
     },
 
      {
       "id": "p6",
-      "par_qui": "par : Vous",
-      "description": "Description 6"
+      "par_qui": "par: Ahmed HAFDI",
+      "description": "Description 6",
+      "access":"limité"
     },
     {
       "id": "p7",
-      "par_qui": "par : Vous",
-      "description": "Description 7"
+      "par_qui": "par: Ahmed HAFDI ",
+      "description": "Description 7",
+      "access":"limité"
     },
     {
       "id": "p8",
-      "par_qui": "par : Vous",
-      "description": "Description 8"
+      "par_qui": "par: Vous  ",
+      "description": "Description 8",
+      "access":"limité"
     },
     {
       "id": "p9",
-      "par_qui": "par : Vous",
-      "description": "Description 9"
+      "par_qui": "par: Ahmed HAFDI ",
+      "description": "Description 9",
+      "access":"limité"
     },
     {
       "id": "p10",
-      "par_qui": "par : Vous",
-      "description": "Description 10"
+      "par_qui": "par: HADFI ABD EL MOUEMNE ",
+      "description": "Description 10",
+      "access":"limité"
     }
   ]
