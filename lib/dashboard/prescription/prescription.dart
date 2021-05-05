@@ -209,16 +209,7 @@ class _PrescrireState extends State<Prescrire> {
       Step(
         title: Text('Posologie', style: TextStyle(fontSize: 10)),
 
-        content: Card(
-                          margin: EdgeInsets.all(10),
-                          child: ListTile(
-                            leading :FlatButton(
-                child: Text('Posologie'),
-                color: Colors.blue,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-              title: Column(
+        content: Column(
                               children :[
                               
  RadioListTile<SingingCharacter>(
@@ -254,10 +245,7 @@ class _PrescrireState extends State<Prescrire> {
            
                               ]
 
-                              ), 
-                              
-                          ),
-                        ),
+                              ),
         isActive: _currentStep >= 1,
       ),
       Step(

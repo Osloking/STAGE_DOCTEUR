@@ -116,7 +116,7 @@ class Ordonnance extends StatelessWidget {
       ),
             ListTile(
                 leading: Icon(Icons.folder,color:Color(0xff6874ec)),
-        title: Text('Docements'),
+        title: Text('Dossiers médicaux'),
         onTap: () {
          Navigator.push(
                     context,

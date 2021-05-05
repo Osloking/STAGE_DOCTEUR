@@ -14,7 +14,7 @@ class _DocumentState extends State<Document> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Documents',
+            'Dossiers médicaux',
           ),
           
           backgroundColor: Color(0xff6874ec),

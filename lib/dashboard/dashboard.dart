@@ -90,7 +90,7 @@ class _DashBoardState extends State<DashBoard> {
       ),
             ListTile(
                 leading: Icon(Icons.folder),
-        title: Text('Docements'),
+        title: Text('Dossiers médicaux'),
         onTap: () {
          Navigator.push(
                     context,
