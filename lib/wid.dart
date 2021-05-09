@@ -1,99 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:searchable_dropdown/searchable_dropdown.dart';
-import 'dart:async';
-import 'dart:convert';
+import 'package:toast/toast.dart';
 
+void main() => runApp(new MyApp());
 
-
-class SearchableDropdownApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  _AppState createState() => _AppState();
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new MyHomePage(),
+    );
+  }
 }
 
-List<String> localData =  ['ABILIFY 10 MG, Comprimé','ABILIFY 15 MG, Comprimé','ABSTRAL 100 µG, Comprimé sublingual','ACARBOSE LAPROPHAN 50 MG, Comprimé','ACDigest, Gélule','ACEPRIL PLUS 4 MG, Comprimé','D-BLASTIN 20 MG, Poudre pour perfusion','D-STRESS, Comprimé','EAU P.P.I. Injectable 5 ML','FABRAZYME 35 MG','GABAMOX 300 MG, Gélule'];
-
-class _AppState extends State<SearchableDropdownApp> {
-  Map<String, String> selectedValueMap = Map();
+class MyHomePage extends StatefulWidget {
+  
 
   @override
-  void initState() {
-    //selectedValueMap["local"] = null;
-    
-    super.initState();
-  }
+  _MyAppState createState() => new _MyAppState();
+}
 
+class _MyAppState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: const Text('Searchable Dropdown Example App'),
+          title: const Text('Toast plugin example app'),
         ),
-        body: new SingleChildScrollView(
-          child: Container(
-            height: 571,
-            width: double.infinity,
-            color: Colors.white.withOpacity(0.4),
-            child: Container(
-              padding: EdgeInsets.only(left: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new Container(
-                    child: new Text(
-                      'Dropdown with local data : ',
-                      style: new TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                      ),
-                    )
-                  ),
-                  // use local data for providing options and store selected value to the key "local"
-                  getSearchableDropdown(localData, "local"),
-                
-                
-                ],
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: RaisedButton(
+                    child: Text('Show Short Toast'),
+                    onPressed: () => showToast("Show Short Toast")),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: RaisedButton(
+                    child: Text('Show Long Toast'),
+                    onPressed: () => showToast("Show Long Toast", duration: Toast.LENGTH_LONG)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: RaisedButton(
+                    child: Text('Show Bottom Toast'),
+                    onPressed: () => showToast("Show Bottom Toast", gravity: Toast.BOTTOM)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: RaisedButton(
+                    child: Text('Show Center Toast'),
+                    onPressed: () => showToast("Show Center Toast", gravity: Toast.CENTER)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: RaisedButton(
+                    child: Text('Show Top Toast'),
+                    onPressed: () => showToast(
+                        """所爱隔山海，山海皆可平。可是你不爱我啊，隔了座火焰山还拿不到芭蕉扇。我奋不顾身穿山越岭到了你身旁，你也只会来一句“卧槽你好666啊”""",
+                        gravity: Toast.TOP)),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget getSearchableDropdown(List<String> listData, mapKey) {
-    List<DropdownMenuItem> items = [];
-    for(int i=0; i < listData.length; i++) {
-      items.add(new DropdownMenuItem(
-          child: new Text(
-            listData[i],
-          ),
-          value: listData[i],
-        )
-      );
-    }
-    return new SearchableDropdown(
-      items: items,
-      value: selectedValueMap[mapKey],
-      isCaseSensitiveSearch: false,
-      hint: new Text(
-        'Select One'
-      ),
-      searchHint: new Text(
-        'Select One',
-        style: new TextStyle(
-            fontSize: 20
-        ),
-      ),
-      onChanged: (value) {
-        setState(() {
-          selectedValueMap[mapKey] = value;
-        });
-      },
-    );
+  void showToast(String? msg, {int? duration, int? gravity}) {
+    Toast.show(msg, context, duration: duration, gravity: gravity);
   }
-
-  
 }

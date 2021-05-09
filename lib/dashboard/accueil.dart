@@ -8,6 +8,7 @@ import'../dashboard/ordonnances.dart';
 import'../dashboard/documents.dart';
 import '../dashboard/profile/profile_page.dart';
 import '../dashboard/agenda/agenda.dart';
+
 class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -146,7 +147,7 @@ class Accueil extends StatelessWidget {
                           margin: EdgeInsets.all(10),
                           child: ListTile(
                             leading: Text("Bonjour ,",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
-                            title: Text("Dr Khalid",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
+                            title: Text("Dr HAFDI Ahmed",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,),),
                             
                           ),
                         ),

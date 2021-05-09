@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import'../dashboard/accueil.dart';
+import 'package:toast/toast.dart';
+
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
   @override
@@ -21,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: 'ahmed.hafdi.contact@gmail.com',
+      initialValue: '',
       decoration: InputDecoration(
         hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -31,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
 
     final password = TextFormField(
       autofocus: false,
-      initialValue: 'some password',
+      initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
@@ -48,10 +50,17 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text('Connexion'),
                 color: Color(0xff6874ec),
                 textColor: Colors.white,
-                onPressed: () {Navigator.push(
+                onPressed: () {
+
+       
+                Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Accueil()),
-                  );},
+                  );
+       showToast("Welcome, Dr.HAFDI Ahmed", duration: Toast.LENGTH_LONG,gravity: Toast.CENTER);
+
+
+                },
               ),
             ),
 
@@ -89,4 +98,10 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  void showToast(String? msg, {int? duration, int? gravity}) {
+    Toast.show(msg, context, duration: duration, gravity: gravity);
+  }
 }
+
+
