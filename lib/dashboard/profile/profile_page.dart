@@ -33,7 +33,7 @@ class MapScreenState extends State<ProfilePage>
                 color: Colors.white,
                 child: new Column(
                   children: <Widget>[
-                   
+                 
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                       child: new Stack(fit: StackFit.loose, children: <Widget>[
@@ -254,6 +254,45 @@ class MapScreenState extends State<ProfilePage>
                               ),
                             ],
                           )),
+  Padding(
+                          padding: EdgeInsets.only(
+                              left: 25.0, right: 25.0, top: 25.0),
+                          child: new Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+
+                                new Text(
+                                    'logout',
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  IconButton(
+              icon: Icon(
+                Icons.logout,
+                size: 30,
+                color: Colors.red,
+              ),
+              onPressed: () => {
+
+               Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  ),
+
+               }),
+
+
+                                ],
+                              ),
+                            ],
+                          )),
+
+
                       
 
                       !_status ? _getActionButtons() : new Container(),
